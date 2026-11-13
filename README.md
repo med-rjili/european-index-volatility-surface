@@ -201,6 +201,16 @@ pytest -q
 
 The charts under `figures/demo/` in this repository were produced from the **synthetic** dataset and are labelled accordingly. They illustrate expected visualizations; they must not be cited as evidence about current EURO STOXX 50 market conditions.
 
+## Interactive research notebooks
+
+Three notebooks offer a guided, mathematical walkthrough:
+
+- `notebooks/01_black76_implied_volatility.ipynb`: Black–76 pricing, numerical inversion, and quote cleaning.
+- `notebooks/02_smiles_visualization.ipynb`: observed synthetic smiles, forward moneyness, and graphical interpretation.
+- `notebooks/03_svi_ssvi_calibration.ipynb`: SVI/SSVI fitting, in-sample errors, and model comparisons.
+
+Run notebooks from the repository root after `pip install -e ".[dev]"`. The notebooks explicitly use **synthetic** options, and any real-market study must supply its own licensed quote CSV.
+
 ## Project structure
 
 ```text
@@ -220,7 +230,8 @@ european-index-volatility-surface/
 │   ├── generate_demo.py
 │   ├── prepare_dataset.py
 │   └── run_analysis.py
-├── figures/demo/
+├── figures/demo/          # committed synthetic demonstration plots
+├── notebooks/             # guided walkthroughs
 ├── data/raw/
 ├── data/processed/
 ├── reports/
