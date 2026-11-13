@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "european-index-volatility-surface"
+version = "0.1.0"
+description = "Public BTC options market data, volatility surface construction and SVI/SSVI calibration"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Mohamed Rejili"}]
+dependencies = ["numpy>=1.24", "pandas>=2.0", "scipy>=1.10", "requests>=2.31", "matplotlib>=3.7", "plotly>=5.18", "nbformat>=5.9"]
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "ruff>=0.3", "jupyter>=1.0"]
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+[tool.ruff]
+line-length = 100
+target-version = "py310"
